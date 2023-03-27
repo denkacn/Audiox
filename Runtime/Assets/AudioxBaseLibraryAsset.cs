@@ -1,4 +1,5 @@
-﻿using Audiox.Runtime.Models;
+﻿using System.Collections.Generic;
+using Audiox.Runtime.Models;
 using UnityEngine;
 
 namespace Audiox.Runtime.Assets
@@ -8,6 +9,11 @@ namespace Audiox.Runtime.Assets
         public string LibraryName;
         
         public virtual PlayData GetPlayDataByName(string sampleName)
+        {
+            return null;
+        }
+
+        public virtual List<string> GetAvailableSampleNames()
         {
             return null;
         }

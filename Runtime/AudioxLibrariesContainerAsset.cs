@@ -36,5 +36,18 @@ namespace Audiox.Runtime
 
             return null;
         }
+
+        public List<string> GetAvailableSampleNames()
+        {
+            var availableSampleNames = new List<string>();
+            
+            foreach (var library in _libraries)
+            {
+                var sampleNames = library.GetAvailableSampleNames();
+                availableSampleNames.AddRange(sampleNames);
+            }
+
+            return availableSampleNames;
+        }
     }
 }

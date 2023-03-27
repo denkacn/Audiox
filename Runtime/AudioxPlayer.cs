@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Audiox.Runtime.Models;
 using UnityEngine;
 
@@ -26,6 +27,11 @@ namespace Audiox.Runtime
                 
                 _source.Play();
             }
+        }
+
+        public List<string> GetAvailableSampleNames()
+        {
+            return _librariesContainer.GetAvailableSampleNames();
         }
 
         private void Update()

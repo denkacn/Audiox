@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Audiox.Runtime.Models;
 using UnityEngine;
 
@@ -15,6 +16,11 @@ namespace Audiox.Runtime.Assets
         public override PlayData GetPlayDataByName(string sampleName)
         {
             return new PlayData(Clip, Samples.Find(s => s.Name == sampleName));
+        }
+
+        public override List<string> GetAvailableSampleNames()
+        {
+            return Samples.Select(clipData => clipData.Name).ToList();
         }
     }
 }
