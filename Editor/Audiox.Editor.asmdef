@@ -1,0 +1,16 @@
+{
+    "name": "Audiox.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:2c6272c206847134897254a6096536c3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
