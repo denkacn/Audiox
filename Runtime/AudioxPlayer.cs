@@ -14,12 +14,17 @@ namespace Audiox.Runtime
         private PlayData _playData;
         private bool _isPlaying = false;
         
-        public void Play(string sampleName)
+        public void Play(string sampleName, float volume = -1)
         {
             var playData = _librariesContainer.GetPlayDataByName(sampleName);
             if (playData != null)
             {
                 _playData = playData;
+
+                if (volume >= 0)
+                {
+                    _source.volume = volume;
+                }
                 
                 _source.clip = _playData.Clip;
                 _source.time = _playData.Sample.StartPosition;
