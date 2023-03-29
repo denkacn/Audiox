@@ -8,7 +8,7 @@ namespace Audiox.Runtime.Assets
     {
         public string LibraryName;
         
-        public virtual PlayData GetPlayDataByName(string sampleName)
+        public virtual IPlayData GetPlayDataByName(string key)
         {
             return null;
         }

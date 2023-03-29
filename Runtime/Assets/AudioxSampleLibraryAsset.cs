@@ -13,9 +13,9 @@ namespace Audiox.Runtime.Assets
         public AudioClip Clip;
         public List<Sample> Samples = new List<Sample>();
 
-        public override PlayData GetPlayDataByName(string sampleName)
+        public override IPlayData GetPlayDataByName(string key)
         {
-            return new PlayData(Clip, Samples.Find(s => s.Name == sampleName));
+            return new PlayDataSimple(Clip, Samples.Find(s => s.Name == key));
         }
 
         public override List<string> GetAvailableSampleNames()

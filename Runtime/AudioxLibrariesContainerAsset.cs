@@ -12,12 +12,12 @@ namespace Audiox.Runtime
     {
         [SerializeField] private List<AudioxBaseLibraryAsset> _libraries;
 
-        public PlayData GetPlayDataByName(string sampleName)
+        public IPlayData GetPlayDataByName(string sampleName)
         {
             foreach (var library in _libraries)
             {
                 var playData = library.GetPlayDataByName(sampleName);
-                if (playData != null && playData.Sample != null)
+                if (playData != null && playData.IsCorrect)
                 {
                     return playData;
                 }
@@ -26,7 +26,7 @@ namespace Audiox.Runtime
             return null;
         }
         
-        public PlayData GetPlayDataByName(string sampleName, string libraryName)
+        public IPlayData GetPlayDataByName(string sampleName, string libraryName)
         {
             var library = _libraries.Find(l => l.LibraryName == libraryName);
             if (library != null)

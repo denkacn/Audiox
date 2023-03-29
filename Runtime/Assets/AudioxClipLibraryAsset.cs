@@ -13,12 +13,12 @@ namespace Audiox.Runtime.Assets
     {
         [SerializeField] private List<ClipData> _clipsData;
         
-        public override PlayData GetPlayDataByName(string sampleName)
+        public override IPlayData GetPlayDataByName(string key)
         {
-            var clipData = _clipsData.Find(c => c.ClipName == sampleName);
+            var clipData = _clipsData.Find(c => c.ClipName == key);
             if (clipData != null)
             {
-                return new PlayData(clipData.Clip, clipData.ClipName);
+                return new PlayDataSimple(clipData.Clip, clipData.ClipName);
             }
             
             return null;
