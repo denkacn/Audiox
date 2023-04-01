@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Audiox.Runtime.Models;
 using UnityEngine;
 
@@ -20,6 +21,11 @@ namespace Audiox.Runtime.Assets
             }
             
             return null;
+        }
+        
+        public override List<string> GetAvailableSampleNames()
+        {
+            return _sequences.Select(sequence => sequence.SequenceName).ToList();
         }
     }
 
