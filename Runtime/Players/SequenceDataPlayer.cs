@@ -25,11 +25,11 @@ namespace Audiox.Runtime.Players
                 _playData = playDataSequence;
                 _isPlaying = true;
                 
-                PlaySequence();
+                PlaySequence(volume);
             }
         }
 
-        private async Task PlaySequence()
+        private async Task PlaySequence(float volume)
         {
             foreach (var item in _playData.SequenceItems)
             {
@@ -37,7 +37,7 @@ namespace Audiox.Runtime.Players
 
                 Debug.Log(Time.time + "PlaySequence: " + item.SampleName);
                 
-                var player = _player.Play(item.SampleName);
+                var player = _player.Play(item.SampleName, volume);
                 
                 while (player.IsPlaying)
                 {
